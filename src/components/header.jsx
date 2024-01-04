@@ -1,13 +1,23 @@
-import { Stack, Button, Typography } from "@mui/material";
-
+import { Paper, Button, Typography } from "@mui/material";
+const headerStyle = {
+  display: "flex",
+  justifyContent: "space-between",
+  position: "sticky",
+  top: "49px",
+  zIndex: 1,
+  p: 2,
+  borderRadius: 0,
+  borderBottomLeftRadius: 35,
+  borderBottomRightRadius: 35,
+};
 const Header = ({ title = "", btnText = "", onClickBtn = null }) => {
   return (
-    <Stack direction="row" justifyContent="space-between">
+    <Paper sx={headerStyle}>
       <Typography variant="h6"> {title}</Typography>
       <Button variant="contained" onClick={onClickBtn}>
         {btnText}
       </Button>
-    </Stack>
+    </Paper>
   );
 };
 export default Header;

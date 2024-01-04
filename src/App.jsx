@@ -11,6 +11,7 @@ const ContainerStyle = {
 const PaperStyle = {
   height: "100%",
   borderRadius: 1,
+  mb: 2,
 };
 
 function App() {
@@ -30,7 +31,8 @@ function App() {
     },
   ];
   const getCallData = () => {
-    axios.get(baseURL).then((response) => {
+    const url = `${baseURL + activitiesUrl}`;
+    axios.get(url).then((response) => {
       setCallsData(response.data);
     });
   };

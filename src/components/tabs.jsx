@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+const navTopStyle = { position: "sticky", top: 0, zIndex: 1 };
 const MuiTabs = ({ tabs = [] }) => {
   const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
@@ -18,17 +19,13 @@ const MuiTabs = ({ tabs = [] }) => {
         aria-labelledby={`simple-tab-${index}`}
         {...other}
       >
-        {value === index && (
-          <Box sx={{ p: 3 }}>
-            <Typography>{children}</Typography>
-          </Box>
-        )}
+        {value === index && <Box sx={{ height: "100%" }}>{children}</Box>}
       </div>
     );
   }
   return (
     <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Paper sx={navTopStyle}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -39,7 +36,7 @@ const MuiTabs = ({ tabs = [] }) => {
               <Tab label={label} id={`simple-tab-${index}`} />
             ))}
         </Tabs>
-      </Box>
+      </Paper>
       {tabs.length > 0 &&
         tabs.map(({ content }, index) => (
           <CustomTabPanel key={Math.random(2)} value={value} index={index}>
