@@ -32,7 +32,7 @@ const ActivityFeed = ({ callData, setCallsData, updateCall, loading }) => {
     setCallsData((prevData) => {
       const data = [...prevData];
       return data.map((dataObj) =>
-        dataObj.id ? { ...dataObj, is_archived: true } : dataObj
+        dataObj.id === id ? { ...dataObj, is_archived: true } : dataObj
       );
     });
   };

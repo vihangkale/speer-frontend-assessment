@@ -9,7 +9,7 @@ const Details = ({ data, archiveUnarchiveClick, loading }) => {
         <Grid container spacing={2}>
           {Array.from({ length: 25 }).map((_, index) => (
             <Grid key={index} item xs={12} sm={6} md={6} lg={4} xl={3} xxl={3}>
-              <SkeletonLoader height={152} />
+              <SkeletonLoader height={152} key={index} />
             </Grid>
           ))}
         </Grid>
@@ -18,8 +18,18 @@ const Details = ({ data, archiveUnarchiveClick, loading }) => {
       ) : (
         <Grid container spacing={2}>
           {data.map((callObj) => (
-            <Grid item xs={12} sm={6} md={6} lg={4} xl={3} xxl={3}>
+            <Grid
+              key={callObj?.id ?? ""}
+              item
+              xs={12}
+              sm={6}
+              md={6}
+              lg={4}
+              xl={3}
+              xxl={3}
+            >
               <CallCard
+                key={callObj?.id ?? ""}
                 data={callObj}
                 archiveUnarchiveClick={archiveUnarchiveClick}
               />

@@ -33,7 +33,7 @@ const Archived = ({ callData, setCallsData, updateCall, loading }) => {
     setCallsData((prevData) => {
       const data = [...prevData];
       return data.map((dataObj) =>
-        dataObj.id ? { ...dataObj, is_archived: false } : dataObj
+        dataObj.id === id ? { ...dataObj, is_archived: false } : dataObj
       );
     });
   };
