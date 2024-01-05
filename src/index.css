@@ -8,6 +8,11 @@
 
 body {
   margin: 0;
-
+  padding: 0;
+  height: 100vh;
   min-height: 100vh;
+  background: #000000;
+}
+#root {
+  height: 100%;
 }
