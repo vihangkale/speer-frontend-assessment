@@ -3,6 +3,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
+
 const navTopStyle = { position: "sticky", top: 0, zIndex: 1 };
 const MuiTabs = ({ tabs = [] }) => {
   const [value, setValue] = useState(0);
@@ -32,8 +33,13 @@ const MuiTabs = ({ tabs = [] }) => {
           aria-label="basic tabs example"
         >
           {tabs.length > 0 &&
-            tabs.map(({ label }, index) => (
-              <Tab label={label} id={`simple-tab-${index}`} />
+            tabs.map(({ label, icon: Icon }, index) => (
+              <Tab
+                iconPosition="start"
+                icon={<Icon />}
+                label={label}
+                id={`simple-tab-${index}`}
+              />
             ))}
         </Tabs>
       </Paper>
