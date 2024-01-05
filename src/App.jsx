@@ -5,7 +5,7 @@ import ArchiveIcon from "@mui/icons-material/Archive";
 import PhoneIcon from "@mui/icons-material/Phone";
 //import components
 import MuiTabs from "./components/tabs";
-import ActivityFeed from "./components/ActivityFeed";
+import ActivityFeed from "./components/activityFeed";
 import Archived from "./components/archived";
 //import third party libraries
 import axios from "axios";
